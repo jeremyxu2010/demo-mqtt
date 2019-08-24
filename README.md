@@ -191,23 +191,23 @@ mosquitto_pub -t a/b/c -m hello -q 1
 
 ### MQTT消息QoS
 
-MQTT发布消息QoS保证不是端到端的，是客户端与服务器之间的。订阅者收到MQTT消息的QoS级别，最终取决于发布消息的QoS和主题订阅的QoS。
-
-![qos](./assets/qos.jpg)
+MQTT发布消息QoS保证不是端到端的，是客户端与服务器之间的。订阅者收到MQTT消息的QoS级别，最终取决于发布消息的QoS和主题订阅的QoS，简单说就是发布消息的QoS和主题订阅的QoS两者间的较小值。
 
 Qos0消息发布订阅
 
-![qos-0](./assets/9qp197rn3oo84534n2rnp37o7ss48p81.jpg)
+![qos-0](./assets/qos-0.png)
 
 
 Qos1消息发布订阅
 
-![qos-1](./assets/r8120pr787744n908q9p0n0n49015r66.jpg)
+![qos-1](./assets/qos-1.png)
 
 
 Qos2消息发布订阅
 
-![qos-2](./assets/r8120pr787744n908q9p0n0n49015r67.jpg)
+![qos-2](./assets/qos-2.png)
+
+可以看到为了满足越来越高的QoS，消息传递过程增加了很多保障性的控制指令。
 
 ### MQTT会话自动销毁
 
